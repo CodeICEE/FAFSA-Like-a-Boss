@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_comment, only: %i[ show edit update destroy ]
 
     def create
-        if user_signed_in?
+        # if user_signed_in?
             
                 @post = Post.find(params[:post_id])
                 @comment = @post.comments.create(params[:comment].permit(:comment))
@@ -14,9 +15,9 @@ class CommentsController < ApplicationController
                 else
                     redirect_to root_path
                 end 
-        else
-            render 'logandsign'
-        end
+        # else
+        #     render 'logandsign'
+        # end
     
     end
 
@@ -33,7 +34,7 @@ class CommentsController < ApplicationController
     end
 
     def edit
-        if (user_signed_in? && (current_user.id == comment.user_id))
+        if (user_signed_in? && (current_user.id == @comment.user_id))
             @post = Post.find(params[:post_id])
             @comment = @post.comments.find(params[:id])
         else
@@ -43,7 +44,7 @@ class CommentsController < ApplicationController
     end
 
     def update
-        if (user_signed_in? && (current_user.id == comment.user_id))
+        if (user_signed_in? && (current_user.id == @comment.user_id))
             @post = Post.find(params[:post_id])
             @comment = @post.comments.find(params[:id])
     

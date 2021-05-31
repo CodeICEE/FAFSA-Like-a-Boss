@@ -10,5 +10,15 @@
   <%= @post.content %>
 </p>
 
+<h2 class = "comments">Replies</h2>
+  <h2> <%= @post.comments.count %></h2>
+  <%= render @post.comments %>
+
+  <h3>Reply</h3>
+  <%= render "comments/form" %>
+
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+ 

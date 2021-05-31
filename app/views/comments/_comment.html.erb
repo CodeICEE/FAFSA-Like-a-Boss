@@ -1,0 +1,6 @@
+<p class = "comment"> <%= comment.comment %> </p>
+<p class = "comment"> <%= comment.user.email %> </p>
+
+<%= link_to "Delete",[comment.post, comment], method: :delete, data: {confirm: "Are you sure you want to delete your reply?"} %>
+
+<%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>

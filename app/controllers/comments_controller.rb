@@ -1,16 +1,22 @@
 class CommentsController < ApplicationController
 
     def create
-        @post = Post.find(params[:post_id])
-        @comment = @post.comments.create(params[:comment].permit(:comment))
-        @comment.user_id = current_user.id if current_user
-        @comment.save
-
-        if @comment.save
-            redirect_to post_path(@post)
+        if user_signed_in?
+            
+                @post = Post.find(params[:post_id])
+                @comment = @post.comments.create(params[:comment].permit(:comment))
+                @comment.user_id = current_user.id if current_user
+                @comment.save
+        
+                if @comment.save
+                    redirect_to post_path(@post)
+                else
+                    redirect_to root_path
+                end 
         else
-            render 'new'
-        end     
+            render 'logandsign'
+        end
+    
     end
 
     def destroy

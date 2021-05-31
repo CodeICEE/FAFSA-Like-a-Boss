@@ -1,4 +1,4 @@
-<p id="notice"></p><%= notice %>
+<%#<p id="notice"></p><%= notice %>
 
 <h1>Welcome to the Forum!</h1>
 <br>
@@ -9,7 +9,7 @@
   <p>Published <%= time_ago_in_words(post.created_at)%> ago  by <%= post.user.email %></p>
   <br>
   <%= link_to 'Edit', edit_post_path(post) %>
-  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
   
   <br><br>
       

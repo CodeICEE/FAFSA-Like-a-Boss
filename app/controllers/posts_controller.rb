@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: %i[ show edit update destroy ]
+  
 
   # GET /posts or /posts.json
   def index
@@ -17,6 +19,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    if (user_signed_in? && (current_user.id == @post.user_id))
+    end
   end
 
   # POST /posts or /posts.json

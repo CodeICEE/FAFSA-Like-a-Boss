@@ -1,0 +1,13 @@
+
+    <% @posts.order('created_at desc').each do |post| %>
+        <% if post.channel_id == 2 %>
+            <h2><%= link_to post.title, post %></h2>
+            <p>
+                Published <%= time_ago_in_words(post.created_at)%> ago in 
+                <%= link_to post.channel.channel_name, post.channel %> by <strong><%= post.user.username %></strong>
+            </p>
+        <% end %>
+    <br>     
+    <% end %>
+
+

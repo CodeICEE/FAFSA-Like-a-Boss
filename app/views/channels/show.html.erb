@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+
+  <strong>Channel name:</strong>
+  <%= @channel.channel_name %>
+
+<% if @channel.id == 2 %>
+  <%= render  'shared/postsgeneral'%>
+<% elsif @channel.id == 1 %>
+  <%= render 'shared/postsaskexpert' %>
+<% end %>
+
+
+<%= link_to 'Edit', edit_channel_path(@channel) %> |
+<%= link_to 'Back', posts_path %>

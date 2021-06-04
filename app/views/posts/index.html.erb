@@ -3,19 +3,7 @@
 <h1>Welcome to the Forum!</h1>
 <br>
 
-<% @posts.each do |post| %>
-  <h2><%= link_to post.title, post %></h2>
-
-  <p>Published <%= time_ago_in_words(post.created_at)%> ago  by <%= post.user.username %></p>
-  <br>
-  <%= link_to 'Edit', edit_post_path(post) %>
-  <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  
-  <br><br>
-      
-<% end %>
-  
-
+<%= render 'shared/postsall' %>
 
 <br>
 

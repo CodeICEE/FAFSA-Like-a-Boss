@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+// blue #1FA5F2
+// green #1EE88A
+// drak blue #1E68E8 
+
+  #cont{
+    min-height: 100vh;
+    position: relative;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .myfooter {
+    background-color: #1E68E8 ;
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+    width: 100%;
+  }
+
+#main{
+    padding-bottom: 2.5rem;
+}
+
+// Buttons 
+button{
+    border-radius: .5em;
+    border-style: none;
+    background-color: #1E68E8;
+    height: 2.5em;
+    width: 10em;
+    text-decoration: none;
+    margin: .25em;
+}
+
+.btntext{
+    text-decoration: none;
+    color: rgb(226, 226, 226)
+}

@@ -26,6 +26,12 @@ gem 'devise'
 
 gem 'simple_form'
 
+gem 'bootstrap', '~> 5.0.1'
+
+gem 'jquery-rails'
+
+
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

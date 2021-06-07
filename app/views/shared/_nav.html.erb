@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div>
+        <a class="navbar-brand" href= <%= root_path %>> Fafsa like a Boss!</a>
+    </div>
+      <div class="navbar-nav">
+        <a class="nav-link" href= <%= askexpert_path %>>Ask An Expert</a>
+        <a class="nav-link" href= <%= posts_path %> >Disccusion Forum</a>
+        <a class="nav-link" href= <%= learn_path %>>Learning</a>
+      </div>
+
+      <div class="navbar-nav">
+      <% if user_signed_in? %>
+        <button class= "mybtn"> <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "btntext"%> </button>
+      <% else %>
+        <button class="mybtn"> <%= link_to "Log In",  new_user_session_path, :class => "btntext"%> </button>
+        <button class="mybtn"> <%= link_to "Sign up", new_user_registration_path, :class =>"btntext"%> </button>
+      <% end %>
+        
+      </div>
+  </div>
+</nav>
+
+<%# class="collapse navbar-collapse" id="navbarNavAltMarkup" %>

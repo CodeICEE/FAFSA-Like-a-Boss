@@ -14,3 +14,44 @@
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+// blue #1FA5F2
+// green #1EE88A
+// drak blue #1E68E8 
+
+  #cont{
+    min-height: 100vh;
+    position: relative;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .myfooter {
+    background-color: #1E68E8 ;
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+    width: 100%;
+  }
+
+#main{
+    padding-bottom: 2.5rem;
+}
+
+// Buttons 
+button{
+    border-radius: .5em;
+    border-style: none;
+    background-color: #1E68E8;
+    height: 2.5em;
+    width: 10em;
+    text-decoration: none;
+    margin: .25em;
+}
+
+.btntext{
+    text-decoration: none;
+    color: rgb(226, 226, 226)
+}

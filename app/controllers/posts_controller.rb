@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+
   # GET /posts/1 or /posts/1.json
   def show
   end
@@ -69,6 +70,10 @@ class PostsController < ApplicationController
       render 'accounterror'
       
     end
+  end
+
+  def askexpert
+    @post = current_user.posts.build
   end
 
   private

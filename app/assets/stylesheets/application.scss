@@ -15,30 +15,104 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
-// blue #1FA5F2
-// green #1EE88A
-// drak blue #1E68E8 
+:root{
+  --clr-darkblue: #1E68E8;
+  --clr-green: #1EE88A;
+  --clr-blue: #1FA5F2;
+}
+//content
+//main
 
-  #cont{
-    min-height: 100vh;
-    position: relative;
-  }
+
+
+// #cont{
+// border: solid blue 1px;
+// height: 100vh auto;
+
+
+// }
+body {
+  height: 100vh auto;
+}
+#main{
+//border: solid red 1px;
+height: 100vh auto;
+background-image: url('imgs/fafsa_app_bg7.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+
+}
+
+.container{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  //border: solid black 1px;
+}
+
+.basiclink{
+  text-decoration: none;
+  
+
+}
   body {
+    
     display: flex;
     flex-direction: column;
   }
+      // Posts
+        .content_title{
+          display: flex;
+          justify-content: center;
+        }
 
+        .content_content{
+          display: flex;
+          flex-direction: column;
+        }
+
+        .post_title{
+          color: black;
+        }
+
+        .comments_label{
+          
+        }
+
+  
+      // nav
+        .mynav{
+          display: flex;
+          flex-direction: row;
+
+        }
+        
+        .mynavitem{
+          color:white;
+          text-align: center;
+          line-height: 40px;
+          margin-right: 30px;
+        }
+
+        // comments
+        .comment_content{
+          display: flex;
+        }
+
+        .comment_controls{
+          display: flex;
+          margin-left: 10em;
+         
+        }
+//footer
   .myfooter {
-    background-color: #1E68E8 ;
-    position: absolute;
+    background: var(--clr-green);
+    position: relative;
     bottom: 0;
-    height: 2.5rem;
     width: 100%;
   }
-
-#main{
-    padding-bottom: 2.5rem;
-}
 
 // Buttons 
 button{
@@ -53,5 +127,70 @@ button{
 
 .btntext{
     text-decoration: none;
-    color: rgb(226, 226, 226)
+    color: rgb(226, 226, 226);
 }
+.btntext:hover{
+  text-decoration: none;
+  color:  black;
+}
+
+.btntext2{
+  text-decoration: none;
+  color: rgb(226, 226, 226);
+}
+.btntext2:hover{
+text-decoration: none;
+color:  rgb(255, 255, 255);
+}
+
+.mybtn{
+  border-radius: .5em;
+  border-style: none;
+  background: #1E68E8;
+  height: 2.5em;
+  width: 10em;
+  text-decoration: none;
+  margin: .25em;
+  text-align: center;
+  line-height: 2.5em;
+}
+
+    .mybtn:hover{
+      background: #1FA5F2;
+    }
+
+  .mybtn2{
+    border-radius: .5em;
+    border-style: none;
+    background: #424346;
+    height: 2em;
+    width: 5em;
+    text-decoration: none;
+    margin: .25em;
+    text-align: center;
+    line-height: 2em;
+  }
+  
+      .mybtn2:hover{
+        background: #1FA5F2;
+      }
+
+    .mybtn3{
+      border-radius: .5em;
+      border-style: none;
+      background: #424346;
+      height: 2em;
+      width: 5em;
+      text-decoration: none;
+      margin: .25em;
+      text-align: center;
+      line-height: 2em;
+    }
+    
+        .mybtn3:hover{
+          background: #b91212;
+        }
+    
+
+  
+

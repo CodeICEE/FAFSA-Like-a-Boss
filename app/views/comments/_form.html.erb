@@ -1,4 +1,7 @@
+
+
 <%= simple_form_for([@post, @post.comments.build]) do |f|%>
-<%= f.input :comment, :required => 'required' %>
-<%= f.submit %>
+<%= f.input :comment, :required => 'required', label: " "   %>
+<%= f.submit ("Post Reply"), class: "mybtn btntext" %> 
 <% end %>
+

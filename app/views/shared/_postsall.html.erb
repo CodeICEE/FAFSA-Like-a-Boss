@@ -5,7 +5,7 @@
 
     <p>
         Published <%= time_ago_in_words(post.created_at)%> ago in 
-        <%= link_to post.channel.channel_name, post.channel %> by <strong><%= post.user.username %></strong>
+        <%= link_to post.channel.channel_name, post.channel %> by <strong><%= post.user.username.capitalize %></strong>
     </p>
     
     

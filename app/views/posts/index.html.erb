@@ -1,12 +1,16 @@
 <%#<p id="notice"></p><%= notice %>
+<div class="container">
+    <div class = "posts">
+        <div><h1>Welcome to the Forum!</h1></div>
+        <%= link_to 'New Post', new_post_path, clasS: "mybtn btntext" %>
+    </div>
+       
+    <br>
 
-<h1>Welcome to the Forum!</h1>
-<br>
+    <%= render 'shared/postsall' %>
 
-<%= render 'shared/postsall' %>
+    <br>
 
-<br>
 
-<%= link_to 'New Post', new_post_path %>
 
-<%= link_to 'Home', root_path %>
+</div>

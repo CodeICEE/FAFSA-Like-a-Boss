@@ -1,6 +1,18 @@
-<p class = "comment"> <%= comment.comment %> </p>
-<p class = "comment"> <%= comment.user.username %> </p>
+<div class= "comment_content">
+    <div>
+        <h5 class = "comment"> <%= comment.user.username.capitalize %> </h5>
+        <p class = "comment"> <%= comment.comment %> </p>
 
-<%= link_to "Delete",[comment.post, comment], method: :delete, data: {confirm: "Are you sure you want to delete your reply?"} %>
+    </div>
 
-<%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
+    <div class = "comment_controls">
+        <% if user_signed_in? && current_user.id == comment.user.id %>
+        <%= link_to "Edit", edit_post_comment_path(comment.post, comment), class: "mybtn2 btntext" %>
+        <%= link_to "Delete",[comment.post, comment], method: :delete, data: {confirm: "Are you sure you want to delete your reply?"}, class: "mybtn3 btntext2" %>
+        <% end %>
+    
+    </div>
+
+
+</div>
+<hr>

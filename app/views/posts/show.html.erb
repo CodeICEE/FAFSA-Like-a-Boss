@@ -1,24 +1,46 @@
-  <p id="notice"><%= notice %></p>
+<div class = "container">
+ <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @post.title %>
-  </p>
+  <div class ="content_title"> 
+    <h2 class = "post_title"> <%= @post.title.capitalize %> </h2>
+  </div>
 
-  <p>
-    <strong>Content:</strong>
-    <%= @post.content %>
-  </p>
+    <hr>
 
-  <h2 class = "comments">Replies</h2>
-    <h2> <%= @post.comments.count %></h2>
+  <div class = "content_content">
+    <h4><%= @post.user.username.capitalize %></h4>
+
+    <h5> <%= @post.content %> </h5>
+  </div>
+
+    <hr>
+    <hr>
+
+  <div>
+    <h5 class = "comments_label"> <%= @post.comments.count %> Comments</h5>
+  
     <%= render @post.comments %>
+  </div>
 
+  <div>
     <h3>Reply</h3>
+
     <%= render "comments/form" %>
+  </div>
 
+    
+    <div>
 
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', posts_path %> |
-  <%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
- 
+      <%= link_to 'Back', posts_path, class: " basiclink" %> 
+      
+      <% if user_signed_in? && current_user.id == @post.user.id %>
+      | <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+<br>
+<br>
+<br>
+</div>
+

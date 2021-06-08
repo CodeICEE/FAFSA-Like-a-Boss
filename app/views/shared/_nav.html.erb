@@ -9,12 +9,13 @@
         <a class="nav-link" href= <%= learn_path %>>Learning</a>
       </div>
 
-      <div class="navbar-nav">
+      <div class ="navbar-nav" >
       <% if user_signed_in? %>
-        <button class= "mybtn"> <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "btntext"%> </button>
+        <div class ="mynavitem"> Hi, <%= current_user.username.capitalize %></div>
+        <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "mybtn btntext"%>
       <% else %>
-        <button class="mybtn"> <%= link_to "Log In",  new_user_session_path, :class => "btntext"%> </button>
-        <button class="mybtn"> <%= link_to "Sign up", new_user_registration_path, :class =>"btntext"%> </button>
+        <%= link_to "Log In",  new_user_session_path, :class => "mybtn btntext"%>
+        <%= link_to "Sign up", new_user_registration_path, :class =>"mybtn btntext"%>
       <% end %>
         
       </div>

@@ -64,11 +64,23 @@ background-size: cover;
   }
 
       //Posts
-        .posts{
+        .posts_page_title{
          display: flex;
          justify-content: space-between;
+         
+        }
+
+        .post_title_index{
+          text-decoration: none;
+          color: #424346;
 
         }
+
+        .posts_index{
+
+        }
+
+
       // Single Posts
         .content_title{
           display: flex;

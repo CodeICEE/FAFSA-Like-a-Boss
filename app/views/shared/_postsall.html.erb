@@ -1,7 +1,7 @@
-<div>
+<div class = "posts_index">
     <% @posts.order('created_at desc').each do |post| %>
 
-    <h2><%= link_to post.title, post %></h2>
+    <h2><%= link_to post.title, post, class: "post_title_index" %></h2>
 
     <p>
         Published <%= time_ago_in_words(post.created_at)%> ago in 
@@ -9,8 +9,8 @@
     </p>
     
     
-    <br><br>
-        
+    <br>
+        <hr>
     <% end %>
 </div>
 

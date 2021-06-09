@@ -11,13 +11,12 @@
   </head>
 
   <body>
-    <div>   <%= render 'shared/nav' %> </div>
- 
-    <%# <div id = "cont"> %>
-        <div id ="main"> <%= yield %> </div>
+  <div>   <%= render 'shared/nav' %> </div>
+    <div id = "cont">
+      
+          <div id ="main"> <%= yield %> </div>
+          <div><%= render 'shared/footer' %> </div>
 
-        <div> <%= render 'shared/footer' %></div>
-    <%# </div> %>
-    
+    </div>
   </body>
 </html>

@@ -1,7 +1,11 @@
 
+<div>
 
 <%= simple_form_for([@post, @post.comments.build]) do |f|%>
-<%= f.input :comment, :required => 'required', label: " "   %>
+<%= f.input_field :comment, :required => 'required', label: " " , class: "form-control" %>
 <%= f.submit ("Post Reply"), class: "mybtn btntext" %> 
 <% end %>
+
+</div>
+
 

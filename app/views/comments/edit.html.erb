@@ -1,6 +1,21 @@
-<h1>Edit Reply</h1>
+<div class = 'container'> 
 
-<%= simple_form_for([@post, @comment]) do |f| %>
-<%= f.input :comment, :required => 'required' %>
-<%= f.submit %>
-<% end  %>
+    <div class = "comment-edit"> 
+        <div class ="item-center"><h1>Edit Reply</h1> </div>
+    
+        <div>
+            <%= simple_form_for([@post, @comment]) do |f| %>
+            <%= f.input_field :comment, :required => 'required',  class: "comment-edit-textfield"  %>
+            <%= f.submit ("Update Reply"), class: "mybtn btntext" %> 
+            <% end  %>
+        </div>
+
+        
+            <%= link_to "Cancel", post_path(@post), class: "mybtn3 btntext2" %>
+        
+  
+
+    </div> 
+
+
+</div> 

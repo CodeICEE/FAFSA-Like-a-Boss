@@ -11,7 +11,15 @@
     <h4><%= @post.user.username.capitalize %></h4>
 
     <h5> <%= @post.content %> </h5>
+      
   </div>
+  <div class = "post_controls">
+    <% if user_signed_in? && current_user.id == @post.user.id %>
+    <%= link_to 'Edit', edit_post_path(@post),class: "mybtn2 btntext" %> 
+    <%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "mybtn4 btntext2" %>
+    <% end %>
+  </div>
+  
 
     <hr>
     <hr>
@@ -29,14 +37,12 @@
   </div>
 
     
-    <div>
+    <div class = "test">
 
       <%= link_to 'Back', posts_path, class: " basiclink" %> 
+    
       
-      <% if user_signed_in? && current_user.id == @post.user.id %>
-      | <%= link_to 'Edit', edit_post_path(@post) %> |
-      <%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
+
     </div>
   </div>
 <br>

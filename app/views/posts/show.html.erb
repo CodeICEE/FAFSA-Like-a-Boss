@@ -1,11 +1,12 @@
 <div class = "container">
  <p id="notice"><%= notice %></p>
 
-  <div class ="content_title"> 
+  <div > 
     <h2 class = "post_title"> <%= @post.title.capitalize %> </h2>
+    <p><%=link_to @post.channel.channel_name, @post.channel %></p>
   </div>
 
-    <hr>
+    <hr class="thicc">
 
   <div class = "content_content">
     <h4><%= @post.user.username.capitalize %></h4>
@@ -21,32 +22,28 @@
   </div>
   
 
-    <hr>
-    <hr>
+    <hr class= "lessthicc">
+
 
   <div>
-    <h5 class = "comments_label"> <%= @post.comments.count %> Comments</h5>
-  
+    <h5 class = "comments_label"> <%= @post.comments.count %>
+      <% if @post.comments.count == 1 %>
+      Comment
+      <% else %>
+      Comments
+      <% end %>
+      </h5>
+    
     <%= render @post.comments %>
   </div>
 
-  <div class = "container">
+  <div>
     <h3>Reply</h3>
 
     <%= render "comments/form" %>
   </div>
-
-    
-    <div class = "test">
-
-      <%= link_to 'Back', posts_path, class: " basiclink" %> 
-    
-      
-
-    </div>
+  <%= link_to 'Back', posts_path, class: "mybtn2 btntext2"  %> 
   </div>
-<%# <br>
-<br>
-<br> %>
+
 </div>
 

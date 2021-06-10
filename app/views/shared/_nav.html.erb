@@ -1,25 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <div>
-        <a class="navbar-brand" href= <%= root_path %>> Fafsa like a Boss!</a>
-    </div>
-      <div class="navbar-nav">
-        <a class="nav-link" href= <%= askexpert_path %>>Ask An Expert</a>
-        <a class="nav-link" href= <%= posts_path %> >Disccusion Forum</a>
-        <a class="nav-link" href= <%= learn_path %>>Learning</a>
-      </div>
 
-      <div class ="navbar-nav" >
-      <% if user_signed_in? %>
-        <div class ="mynavitem"> Hi, <%= current_user.username.capitalize %></div>
-        <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "mybtn btntext"%>
-      <% else %>
-        <%= link_to "Log In",  new_user_session_path, :class => "mybtn btntext"%>
-        <%= link_to "Sign up", new_user_registration_path, :class =>"mybtn btntext"%>
-      <% end %>
-        
+<div >
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div>
+          <a class="navbar-brand" href= <%= root_path %>> Fafsa like a Boss!</a>
       </div>
-  </div>
-</nav>
+        <div class="navbar-nav">
+          <a class="nav-link" href= <%= askexpert_path %>>Ask An Expert</a>
+          <a class="nav-link" href= <%= posts_path %> >Disscusion Forum</a>
+          <a class="nav-link" href= <%= learn_path %>>Learning</a>
+        </div>
+
+        <div class ="navbar-nav" >
+        <% if user_signed_in? %>
+          <div class ="mynavitem"> Welcome back <%= current_user.username.capitalize %>!</div>
+          <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "mybtn btntext"%>
+        <% else %>
+          <%= link_to "Log In",  new_user_session_path, :class => "mybtn btntext"%>
+          <%= link_to "Sign up", new_user_registration_path, :class =>"mybtn btntext"%>
+        <% end %>
+          
+        </div>
+    </div>
+  </nav>
+
+</div>
 
 <%# class="collapse navbar-collapse" id="navbarNavAltMarkup" %>

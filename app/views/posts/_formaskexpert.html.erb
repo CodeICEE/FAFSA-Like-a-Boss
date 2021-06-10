@@ -1,15 +1,25 @@
 
-<%= simple_form_for(@post) do |f| %>
+<div class = "newpost" >
+
+  <%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :title, :required => true %>
-    <%= f.input :content, :required => 'required' %>
-    <%= f.hidden_field :channel_id, value: 1 %>
+  <div>
+    <%= f.input_field :title, placeholder: "Title", :required => true, class: "form-control" %>
   </div>
+  <br>
+  <div>
+    <%= f.input_field :content, placeholder: "Content", :required => 'required', class: "form-control new-post-content" %>
+  </div>
+<br>
+  <%= f.hidden_field :channel_id, value: 1 %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  
+    <%= f.submit ("Create Post"), class: "mybtn btntext" %>
+  
 <% end %>
+
+
+</div>
+

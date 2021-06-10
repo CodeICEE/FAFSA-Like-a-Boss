@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class = "container">
 <h1>Channels</h1>
 
 <table>
@@ -14,9 +14,9 @@
     <% @channels.each do |channel| %>
       <tr>
         <td><%= channel.channel_name %></td>
-        <td><%= link_to 'Show', channel %></td>
-        <td><%= link_to 'Edit', edit_channel_path(channel) %></td>
-        <td><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Go to Channel', channel, class: "mybtn btntext" %></td>
+        <td><%= link_to 'Edit Channel', edit_channel_path(channel), class: "mybtn btntext" %></td>
+        <td><%= link_to 'Delete Channel', channel, method: :delete, data: { confirm: 'Are you sure?' }, class: "mybtn btntext" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,6 @@
 
 <br>
 
-<%= link_to 'New Channel', new_channel_path %>
+<%= link_to 'New Channel', new_channel_path, Class: "mybtn btntext" %>
+
+</div>

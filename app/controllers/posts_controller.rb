@@ -21,6 +21,9 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     if (user_signed_in? && (current_user.id == @post.user_id))
+      
+    else
+      render 'accounterror'
     end
   end
 

@@ -1,6 +1,8 @@
-<h1>Editing Channel</h1>
+<div class = "container">
+<h1>Edit Channel</h1>
 
 <%= render 'form', channel: @channel %>
 
-<%= link_to 'Show', @channel %> |
-<%= link_to 'Back', channels_path %>
+<%= link_to 'Go to Channel', @channel, class: "mybtn4 btntext2" %> 
+<%= link_to 'Back', channels_path, class: "mybtn2 btntext2"  %>
+</div>

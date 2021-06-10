@@ -20,6 +20,10 @@
   --clr-green: #1EE88A;
   --clr-blue: #1FA5F2;
 }
+*{
+  margin: 0;
+  padding: 0;
+}
 //content
 //main
 
@@ -30,8 +34,10 @@ body {
 #cont{
   position: relative;
   min-height: 100vh;
-  border: solid red 1px;
+  // border: solid red 1px;
 }
+
+
 
 
 #main{
@@ -45,16 +51,39 @@ body {
   background-attachment: fixed;
   position: relative;
   min-height: 100vh;
+  padding-top: 4em;
 
 
 }
 
 .container{
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  //border: solid black 1px;
-}
+ display: flex;
+//   position: relative;
+flex-direction: column;
+//   //border: solid black 1px;
+
+ }
+
+ .container2{
+   margin: auto;
+   width: 50%;
+   display: flex;
+    // border: solid black 1px;
+    flex-direction: column;
+    
+ }
+
+ .container3{
+   width: 60%;
+   justify-content: center;
+  //  border: solid red 3px;
+ }
+
+ .block{
+   display: block;
+   margin: auto;
+  //  border: solid blue 2px;
+ }
 
 .basiclink{
   text-decoration: none;
@@ -65,6 +94,54 @@ body {
   display: flex;
   flex-direction: column;
   }
+
+.text-center{
+  text-align: center;
+}
+
+.item-center{
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  align-self: center;
+  margin-bottom: 2em;
+  // border: solid green 3px;
+  
+}
+
+.flex-center{
+  justify-content: center;
+}
+
+hr.thicc{
+  border: .19em solid rgb(58, 58, 58);
+  border-radius: .1em;
+  opacity: .75;
+}
+
+hr.lessthicc{
+  border: .11em solid rgb(58, 58, 58);
+  border-radius: .005em;
+  opacity: .75;
+}
+
+
+// Log in and sign up form*************************************************************
+
+.auth-field{
+  width: 100%;
+  height: 3em;
+  border-radius: .5em;
+  border: solid grey .5px;
+}
+
+.flex-down{
+  flex-direction: column;
+}
+
+
+
+
 
 //Posts*********************************************************************************
   .posts_page_title{
@@ -87,13 +164,21 @@ body {
     display: flex;
     flex-direction: column;
     }
+  
+  .newpost{
+    display: flex;
+    flex-direction: column;
+  }
 
+  .new-post-content{
+    height: 10em;
+  }
 
 // Single Posts************************************************************************
-  .content_title{
-    display: flex;
-    justify-content: center;
-    }
+  // .content_title{
+  //   display: flex;
+  //   justify-content: center;
+  //   }
 
   .content_content{
     display: flex;
@@ -117,7 +202,10 @@ body {
   .mynav{
     display: flex;
     flex-direction: row;
+    width: 100%;
     }
+
+
 
   .mynavitem{
     color:white;
@@ -150,24 +238,32 @@ body {
   }
 
   .comment-edit-textfield{
-    width: 100%;
+
     margin-bottom: 2em;
     height: 10em;
   }
 
-  .item-center{
-    align-self: center;
-  }
+
 
 
 //footer***********************************************************************************
-  .myfooter {
-    background: var(--clr-green);
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 5em;
-    }
+  // .myfooter {
+  //   background: var(--clr-green);
+  //   position: relative;
+  //   bottom: 0;
+  //   width: 100%;
+  //   height: 5em;
+  //   }
+
+    .myfooter {
+      background: var(--clr-green);
+      position: relative;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 5em;
+      }
 
 
 // Buttons***********************************************************************************

@@ -5,7 +5,7 @@
     
         <div>
             <%= simple_form_for([@post, @comment]) do |f| %>
-            <%= f.input_field :comment, :required => 'required',  class: "comment-edit-textfield"  %>
+            <%= f.input_field :comment, :required => 'required',  class: "form-control comment-edit-textfield"  %>
             <%= f.submit ("Update Reply"), class: "mybtn btntext" %> 
             <% end  %>
         </div>

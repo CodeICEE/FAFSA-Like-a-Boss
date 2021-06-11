@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        if (user_signed_in? && (current_user.id == @comment.user_id))
+        if (user_signed_in? && (current_user.id == @comment.user_id) || (current_user.is_admin == true))
             @post = Post.find(params[:post_id])
             @comment = @post.comments.find(params[:id])
             @comment.destroy 
@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
     end
 
     def edit
-        if (user_signed_in? && (current_user.id == @comment.user_id))
+        if (user_signed_in? && (current_user.id == @comment.user_id)|| (current_user.is_admin == true))
             @post = Post.find(params[:post_id])
             @comment = @post.comments.find(params[:id])
         else
@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
     end
 
     def update
-        if (user_signed_in? && (current_user.id == @comment.user_id))
+        if (user_signed_in? && (current_user.id == @comment.user_id)|| (current_user.is_admin == true))
             @post = Post.find(params[:post_id])
             @comment = @post.comments.find(params[:id])
     

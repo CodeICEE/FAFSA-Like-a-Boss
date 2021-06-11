@@ -9,13 +9,19 @@
     <hr class="thicc">
 
   <div class = "content_content">
-    <h4><%= @post.user.username.capitalize %></h4>
+    <% if @post.user.is_expert == true %>
+      <%= image_tag("exp_bdg.png", size: "40x40") %>  
+      <h4><%= @post.user.username.capitalize %></h4>
+      <h6> Financial Aid Expert!</h6>
+    <% else %>
+      <h4><%= @post.user.username.capitalize %></h4>
+    <% end %>
 
     <h5> <%= @post.content %> </h5>
       
   </div>
   <div class = "post_controls">
-    <% if user_signed_in? && current_user.id == @post.user.id %>
+    <% if user_signed_in? && current_user.id == @post.user.id || current_user.is_admin == true %>
     <%= link_to 'Edit', edit_post_path(@post),class: "mybtn2 btntext" %> 
     <%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "mybtn4 btntext2" %>
     <% end %>

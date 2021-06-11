@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    if (user_signed_in? && (current_user.id == @post.user_id))
+    if (user_signed_in? && (current_user.id == @post.user_id) || current_user.is_admin == true)
       
     else
       render 'accounterror'
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    if (user_signed_in? && (current_user.id == @post.user_id))
+    if (user_signed_in? && (current_user.id == @post.user_id) || current_user.is_admin == true)
       respond_to do |format|
         if @post.update(post_params)
           format.html { redirect_to @post, notice: "Post was successfully updated." }
@@ -63,7 +63,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
-    if (user_signed_in? && (current_user.id == @post.user_id))
+    if (user_signed_in? && (current_user.id == @post.user_id) || current_user.is_admin == true)
       @post.destroy
       respond_to do |format|
         format.html { redirect_to posts_url, notice: "Post was successfully deleted." }

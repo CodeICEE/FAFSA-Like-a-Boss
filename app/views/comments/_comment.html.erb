@@ -1,12 +1,19 @@
 <div class= "comment_content">
     <div>
-        <h5 class = "comment"> <%= comment.user.username.capitalize %> </h5>
+        <% if comment.user.is_expert == true %>
+            <%= image_tag("exp_bdg.png", size: "25x25") %>
+            <h5 class = "comment"> <%= comment.user.username.capitalize %> </h5>
+            <h6> Financial Aid Expert!</h6>
+        <% else %>
+            <h5 class = "comment"> <%= comment.user.username.capitalize %> </h5>
+        <% end %>
+
         <p class = "comment"> <%= comment.comment %> </p>
 
     </div>
 
     <div class = "comment_controls">
-        <% if user_signed_in? && current_user.id == comment.user.id %>
+        <% if user_signed_in? && current_user.id == comment.user.id || current_user.is_admin == true %>
         <%= link_to "Edit", edit_post_comment_path(comment.post, comment), class: "mybtn2 btntext" %>
         <%= link_to "Delete",[comment.post, comment], method: :delete, data: {confirm: "Are you sure you want to delete your reply?"}, class: "mybtn3 btntext2" %>
         <% end %>

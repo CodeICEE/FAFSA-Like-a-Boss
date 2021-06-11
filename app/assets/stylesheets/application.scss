@@ -19,6 +19,7 @@
   --clr-darkblue: #1E68E8;
   --clr-green: #1EE88A;
   --clr-blue: #1FA5F2;
+  --clr-titlecolor: 
 }
 *{
   margin: 0;
@@ -125,6 +126,17 @@ hr.lessthicc{
   opacity: .75;
 }
 
+//Hero image
+
+.jumbotron{
+  background-image: url('imgs/money-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 50vh;
+}
 
 // Log in and sign up form*************************************************************
 

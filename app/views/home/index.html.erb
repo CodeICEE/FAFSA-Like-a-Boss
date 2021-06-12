@@ -1,9 +1,11 @@
 
 <div class = "jumbotron">
     <h1>Fafsa Like A Boss!</h1>
-
+    <h3>Get help with your FAFSA from EXPERTS!</h3>
+    <%= link_to 'Ask an Expert!', askexpert_path, class: "bigbtn" %>
 </div>
 
-<%= link_to 'Ask an Expert!', askexpert_path %>
-<%= link_to 'Disscustion Forum', posts_path %>
-<%= link_to 'Learning and Tools', learn_path %>
+<div class = "home-btns">
+    <%= link_to 'Disscustion Forum', posts_path, class: "home-btn-left" %>
+    <%= link_to 'Learning and Tools', learn_path, class: "home-btn-right" %>
+</div>

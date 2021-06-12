@@ -19,7 +19,14 @@
   --clr-darkblue: #1E68E8;
   --clr-green: #1EE88A;
   --clr-blue: #1FA5F2;
-  --clr-titlecolor: 
+
+
+  --clr-mainwhite: #FFFBDF;
+  --clr-mainLightGreen: #c6ffc1;
+  --clr-compBlue: #34656d;
+  --clr-accBlueGreen: #334443;
+
+
 }
 *{
   margin: 0;
@@ -30,6 +37,7 @@
 
 body {
   height: 100vh auto;
+  min-width: 100vw;
 }
 
 #cont{
@@ -52,7 +60,7 @@ body {
   background-attachment: fixed;
   position: relative;
   min-height: 100vh;
-  padding-top: 4em;
+  // padding-top: 4em;
 
 
 }
@@ -129,14 +137,90 @@ hr.lessthicc{
 //Hero image
 
 .jumbotron{
-  background-image: url('imgs/money-bg.jpg');
+  background-image: 
+    linear-gradient(
+      rgba(14, 19, 77, 0.582),
+      rgba(3, 42, 47, 0.472)),
+      url('imgs/money-bg2.jpg');
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
   background-size: cover;
-  background-attachment: fixed;
-  height: 50vh;
+  background-attachment:scroll;
+  height: 100vh;
+  width: 100vw;
+  
+  
+    .jumbotron, h1{
+      padding-top: 10rem;
+      color :rgb(255, 255, 255);
+      text-align: center;
+      font-size: 10rem;
+      position: relative;
+    }
+    .jumbotron, h3{
+      
+      color :rgb(255, 255, 255);
+      text-align: center;
+      font-size: 5rem;
+      margin-bottom: 7.5rem;
+      position: relative;
+    }
+
+
+    .bigbtn{
+      margin: auto;
+      border-radius: .5rem;
+      border-style: none;
+      background: #1E68E8;
+      height: 10rem;
+      width: 40%;
+      text-decoration: none;
+      display: block;
+      font-size: 4rem;
+      text-align: center;
+      line-height: 10rem;
+      color: white;
+      transition: all .1s ease-in-out;
+    }
+
+      .bigbtn:hover{
+        transform: scale(1.1);
+        color: var(--clr-mainLightGreen);
+        
+      }
 }
+
+// Home actions 
+  .home-btns{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    border: solid black 3px;
+    padding: 2em;
+
+
+  }
+  .home-btn-left{
+    border-radius: 1em;
+    border: solid red 2px;
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin-right: 1em;
+    
+  }
+
+  .home-btn-right{
+    border-radius: 5em;
+    border: solid blue 2px;
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin-left: 1em;
+   
+
+  }
 
 // Log in and sign up form*************************************************************
 
@@ -217,6 +301,10 @@ hr.lessthicc{
     width: 100%;
     }
 
+    .nav-color{
+      background: var(--clr-compBlue) !important;
+    }
+
 
 
   .mynavitem{
@@ -268,7 +356,7 @@ hr.lessthicc{
   //   }
 
     .myfooter {
-      background: var(--clr-green);
+      background:var(--clr-accBlueGreen);
       position: relative;
       bottom: 0;
       left: 0;

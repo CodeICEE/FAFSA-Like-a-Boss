@@ -4,6 +4,15 @@ class HomeController < ApplicationController
 
   def learn
   end
+
+  def videos
+  end
+
+  def calcs
+  end
+  
+  def blogs
+  end
 end
 
 

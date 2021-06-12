@@ -1,7 +1,7 @@
 
 <div >
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-color">
     <div class="container-sm">
       <div>
           <a class="navbar-brand" href= <%= root_path %>> Fafsa like a Boss!</a>
@@ -16,6 +16,7 @@
         <% if user_signed_in? %>
           <div class ="mynavitem"> Welcome back <%= current_user.username.capitalize %>!</div>
           <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "mybtn btntext"%>
+          <%= link_to "Profile", edit_user_registration_path, :class => "mybtn btntext" %>
         <% else %>
           <%= link_to "Log In",  new_user_session_path, :class => "mybtn btntext"%>
           <%= link_to "Sign up", new_user_registration_path, :class =>"mybtn btntext"%>

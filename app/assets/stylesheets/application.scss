@@ -15,6 +15,9 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;500;900&display=swap');
+ 
+
 :root{
   --clr-darkblue: #1E68E8;
   --clr-green: #1EE88A;
@@ -25,6 +28,7 @@
   --clr-mainLightGreen: #c6ffc1;
   --clr-compBlue: #34656d;
   --clr-accBlueGreen: #334443;
+  --clr-darkgrey: #1d1d1f;
 
 
 }
@@ -38,6 +42,8 @@
 body {
   height: 100vh auto;
   min-width: 100vw;
+  font-family: 'Noto Sans SC', sans-serif;
+  
 }
 
 #cont{
@@ -96,6 +102,7 @@ flex-direction: column;
 
 .basiclink{
   text-decoration: none;
+  color: white;
   
 
 }
@@ -146,46 +153,51 @@ hr.lessthicc{
   background-position: center;
   position: relative;
   background-size: cover;
-  background-attachment:scroll;
+  background-attachment:fixed ;
   height: 100vh;
   width: 100vw;
   
   
     .jumbotron, h1{
-      padding-top: 10rem;
+      padding-top: clamp(10vh, 5vh, 10rem);
       color :rgb(255, 255, 255);
       text-align: center;
-      font-size: 10rem;
+      font-size: clamp(5rem,5vw,15rem);
       position: relative;
     }
     .jumbotron, h3{
-      
       color :rgb(255, 255, 255);
       text-align: center;
-      font-size: 5rem;
-      margin-bottom: 7.5rem;
+      font-size: clamp(2rem,2vw,5rem);
+      margin-bottom: 5.5rem;
       position: relative;
     }
 
 
     .bigbtn{
+      position: relative;
       margin: auto;
       border-radius: .5rem;
       border-style: none;
       background: #1E68E8;
       height: 10rem;
-      width: 40%;
+      width: clamp(350px,40%,60%);
       text-decoration: none;
       display: block;
-      font-size: 4rem;
+      font-size: clamp(32px,4vw,4.5rem);
       text-align: center;
       line-height: 10rem;
       color: white;
       transition: all .1s ease-in-out;
+        @media screen and (max-height:500px) {
+          margin-top:-2rem;
+          height: 4rem;
+          line-height: 4rem;
+        }
     }
 
       .bigbtn:hover{
-        transform: scale(1.1);
+        transform: scale(1.025);
         color: var(--clr-mainLightGreen);
         
       }
@@ -195,31 +207,75 @@ hr.lessthicc{
   .home-btns{
     height: 50vh;
     display: flex;
-    justify-content: center;
-    border: solid black 3px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     padding: 2em;
-
-
   }
   .home-btn-left{
-    border-radius: 1em;
-    border: solid red 2px;
+    background-image: 
+      linear-gradient(
+      rgba(0, 0, 0, .95),
+      rgba(0, 0, 0, .5)),
+      url('imgs/talking-md.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    border-radius: 1rem;
+    // border: solid red 2px;
     height: 100%;
-    width: 100%;
+    width: 45%;
     display: block;
-    margin-right: 1em;
-    
+    margin-right: 1rem;
+    // button text************
+      text-decoration: none;
+      font-size: clamp(2.5rem, 7vw, 15vw);
+      color: white;
+      text-align: center;
+      line-height: match-parent;
+      
+
+      @media screen and (max-width:1199px) {
+        margin: 0;
+        height: 45%;
+        min-width:100%; 
+      }
   }
+    .home-btn-left:hover{
+      color: var(--clr-mainLightGreen)
+    }
 
   .home-btn-right{
-    border-radius: 5em;
-    border: solid blue 2px;
+    background-image: 
+      linear-gradient(
+      rgba(0, 0, 0, .95),
+      rgba(0, 0, 0, .5)),
+      url('imgs/learning-md.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    border-radius: 1rem;
+    // border: solid blue 2px;
     height: 100%;
-    width: 100%;
+    width: 45%;
     display: block;
-    margin-left: 1em;
-   
+    margin-left: 1rem;
+        // button text************
+        text-decoration: none;
+        font-size: clamp(2.5rem, 7vw, 15vw);
+        color: white;
+        text-align: center;
+        line-height: match-parent;
 
+        @media screen and (max-width:1199px) {
+          margin: 0;
+          height: 45%;
+          min-width: 100%;
+          
+        }
+  }
+
+  .home-btn-right:hover{
+    color: var(--clr-mainLightGreen)
   }
 
 // Log in and sign up form*************************************************************
@@ -234,10 +290,6 @@ hr.lessthicc{
 .flex-down{
   flex-direction: column;
 }
-
-
-
-
 
 //Posts*********************************************************************************
   .posts_page_title{
@@ -356,13 +408,15 @@ hr.lessthicc{
   //   }
 
     .myfooter {
-      background:var(--clr-accBlueGreen);
+      background:var(--clr-darkgrey);
       position: relative;
       bottom: 0;
       left: 0;
       right: 0;
       width: 100%;
-      height: 5em;
+      height: 10vh auto;
+      color:white;
+      padding-top: 2rem;
       }
 
 

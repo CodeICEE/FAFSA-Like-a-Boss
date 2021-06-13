@@ -59,7 +59,8 @@ body {
   
   // border: solid blue 1px;
   // margin-bottom: -5em;
-  background-image: url('imgs/fafsa_app_bg8.jpg');
+  // background-image: url('imgs/fafsa_app_bg8.jpg');
+  background-color: var(--clr-mainwhite);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -277,7 +278,82 @@ hr.lessthicc{
   .home-btn-right:hover{
     color: var(--clr-mainLightGreen)
   }
+//Learn page ********************************************
+  .learncont{
+    display: flex;
+    flex-direction: column;
+  }
 
+  .learncont h1{
+    font-size: clamp(80px,5vw,7vw);
+    
+  }
+
+  .learnlinks{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // border: solid red 2px;
+  }
+
+  .learn-link-item{
+    // border: solid blue 3px;
+    border-radius: 2rem;
+    width: 100%;
+    min-width: 200px;
+    height: 30vh;
+    min-height: 150px;
+    margin-bottom: 1.5rem;
+
+      text-decoration: none;
+      font-size: clamp(3rem, 8rem, 8.5vw);
+      text-align: center;
+      line-height: inherit;
+      color:var(--clr-mainwhite);
+ }
+  .learn-link-item:hover{
+    color:var(--clr-mainLightGreen);
+  }
+  .video-link{
+    background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, .3)),
+      url('imgs/video-bitmap.png'),
+      linear-gradient(
+        var(--clr-accBlueGreen),
+        var(--clr-mainLightGreen)); 
+        background-repeat: no-repeat;
+        background-size: cover;   
+  }
+
+  .blog-link{
+    background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, .3)),
+      url('imgs/blog-bitmap.png'),
+      linear-gradient(
+        var(--clr-accBlueGreen),
+        var(--clr-mainLightGreen)); 
+        background-repeat: no-repeat;
+        background-size: cover;
+
+  }
+
+  .calc-link{
+    background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, .3)),
+      url('imgs/calc-bitmap.png'),
+      linear-gradient(
+        var(--clr-accBlueGreen),
+        var(--clr-mainLightGreen)); 
+        background-repeat: no-repeat;
+        background-size: cover;
+
+  }
 // Log in and sign up form*************************************************************
 
 .auth-field{

@@ -1,6 +1,8 @@
 class ChannelsController < ApplicationController
+  before_action :authenticate_admin, except: [:show]
   before_action :set_channel, only: %i[ show edit update destroy ]
   before_action  :find_posts
+
 
   # GET /channels or /channels.json
   def index
@@ -71,6 +73,14 @@ class ChannelsController < ApplicationController
     # Find all posts
     def find_posts
       @posts = Post.all 
+    end
+
+    protected
+    
+    def authenticate_admin
+      unless user_signed_in? && current_user.is_admin == true
+        redirect_to root_path
+      end
     end
 
 end

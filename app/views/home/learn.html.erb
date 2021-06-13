@@ -1,8 +1,10 @@
-<h1>This is the Learn page!</h1>
-<div>
-    <div><%= link_to "Helpful videos", videos_path %></div>
-    <div><%= link_to "Useful Blogs", blogs_path %></div>
-    <div><%= link_to "Financial Calculators", calcs_path %></div>
+<div class = "container">
+    <div class = "learncont">
+        <h1>Learn!</h1>
+        <div class = "learnlinks">
+            <%= link_to "Helpful videos", videos_path, class: "learn-link-item video-link" %>
+            <%= link_to "Useful Blogs", blogs_path, class: "learn-link-item blog-link" %>
+            <%= link_to "Financial Calculators", calcs_path, class: "learn-link-item calc-link" %>
+        </div>
+    </div>
 </div>
-
-

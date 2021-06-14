@@ -21,9 +21,10 @@
       
   </div>
   <div class = "post_controls">
-    <% if user_signed_in? && current_user.id == @post.user.id || current_user.is_admin == true %>
+    <% if user_signed_in? && current_user.id == @post.user.id || user_signed_in? && current_user.is_admin == true  %>
     <%= link_to 'Edit', edit_post_path(@post),class: "mybtn2 btntext" %> 
     <%= link_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "mybtn4 btntext2" %>
+
     <% end %>
   </div>
   

@@ -354,6 +354,33 @@ hr.lessthicc{
         background-size: cover;
 
   }
+
+// Videos Page*************************************************
+  .video-gal{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .single-video{
+    margin: 1rem;
+    // position: relative;
+    // width: 100%;
+    // padding-bottom: 56.25%;
+    // height: 0;
+  }
+
+  .single-video iframe{
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+    // height: 100%;
+  }
+  
+
+
+
 // Log in and sign up form*************************************************************
 
 .auth-field{

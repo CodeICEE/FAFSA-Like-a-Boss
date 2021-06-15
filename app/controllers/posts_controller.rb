@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post_like_exists = PostLike.where(post: @post, user: current_user) == [] ? false : true
   end
 
   # GET /posts/new

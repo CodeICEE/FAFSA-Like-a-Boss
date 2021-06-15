@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'post_likes/update'
   resources :channels
   resources :posts do
     resources :comments

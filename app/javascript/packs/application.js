@@ -4,11 +4,13 @@
 // that code so it'll be compiled.
 
 //= require jquery3
+//= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
 
 
 import Rails from "@rails/ujs"
+
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"

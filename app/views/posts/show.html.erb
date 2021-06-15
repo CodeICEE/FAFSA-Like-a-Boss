@@ -4,7 +4,22 @@
   <div > 
     <h2 class = "post_title"> <%= @post.title.capitalize %> </h2>
     <p><%=link_to @post.channel.channel_name, @post.channel %></p>
+    <%= link_to post_like_text, post_likes_update_path(post: @post), id: "like_post_link", remote: true %>
+    
+      <% if PostLike.where(post: @post).count == 1 %>
+          <p class = "liked-post-count"> <%= PostLike.where(post: @post).count %> Person liked this. </p>
+        
+       <% else%>
+          <p class = "liked-post-count"> <%= PostLike.where(post: @post).count %> People liked this. </p>
+        <%end %>
+ 
+
+      
+      
+    
   </div>
+  
+  
 
     <hr class="thicc">
 

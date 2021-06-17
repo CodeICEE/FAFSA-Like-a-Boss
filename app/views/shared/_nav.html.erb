@@ -16,7 +16,10 @@
         <% if user_signed_in? %>
           <div class ="mynavitem"> Welcome back <%= link_to current_user.username.capitalize, edit_user_registration_path, class: "basiclink"  %>!</div>
           <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "mybtn btntext"%>
-          <% link_to "Channels", channels_path, :class => "mybtn btntext" %>
+        <% elsif user_signed_in?  && current_user.is_admin == true %>
+          <div class ="mynavitem"> Welcome back <%= link_to current_user.username.capitalize, edit_user_registration_path, class: "basiclink"  %>!</div>
+          <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "mybtn btntext"%>
+          <%= link_to "Channels", channels_path, :class => "mybtn btntext" %>
         <% else %>
           <%= link_to "Log In",  new_user_session_path, :class => "mybtn btntext"%>
           <%= link_to "Sign up", new_user_registration_path, :class =>"mybtn btntext"%>

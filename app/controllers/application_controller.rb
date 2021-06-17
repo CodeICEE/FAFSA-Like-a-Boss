@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
     def post_like_text
 
         if @post_like_exists 
-            "Unlike Post"
+                "Unlike Post"
             else    
-          "Like Post"
+                "Like Post"
         end
     end
 
